@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <title>Event registration</title>
+    <p>Enter your details</p>
+    <form action="/submit" method="POST">
+        <label for="username">Enter full name</label>
+        <input type="text" id="username" name="username" required><br></br>
+        <label for="email">Enter Email</label>
+        <input type="email" id="email" name="email" required><br></br>
+        <label for="Phone Number">Enter Phone Number</label>
+        <input type="Number" id="Phone Number" name="Phone Number" required><br></br>
+        <label type="text">Event choice</label>
+        <select id="event" name="event">
+            <option>Marriage</option>
+            <option>Birthday</option>
+            <option>Sangeeth</option>
+        </select><br></br>
+        <label for="Number of Attendees">Number of Attendees:</label>
+        <input type="Number" id="Number of Attendees" name="Number of Attendees"><br></br>
+
+        <input type="submit" value="register">
+    </form>
+</body>
+</html>
