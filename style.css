@@ -1,7 +1,15 @@
 body{
-    background-color: whitesmoke
-    h1{
-        color: blue;
+    background-color: whitesmoke;
+    display: flexbox;
+}
+    #header{
+        text-align: center;
+        align-items: center;
         
     }
-}
+    .contact-info{
+        display: flex;
+        flex-direction: row;
+
+    }
+    
