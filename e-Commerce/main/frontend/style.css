@@ -1,23 +1,132 @@
-body{
+body {
     background-color: rgb(210, 172, 209);
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
-#header{
+
+#header {
     background-color: aliceblue;
     display: flex;
     justify-content: center;
-    padding: 10px;
-    border-radius: 10px;
+    align-items: center;
+    padding: 24px 0;
+    border-radius: 16px;
+    margin: 16px auto 24px auto;
+    width: 80%;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    animation: fadeInDown 1s;
 }
-#nav li{
-    display:inline-flex ;
-    padding-left: 5px;
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
-#nav a{
+
+#header h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 0;
+    color: #222;
+    letter-spacing: 2px;
+}
+
+h2, h3 {
+    text-align: center;
+    margin: 0 0 12px 0;
+    color: #3a1c3a;
+}
+
+#nav {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+
+#nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+#nav li {
+    display: inline-flex;
+}
+
+#nav a {
     text-decoration: none;
-    margin-right:20px ;
+    color: #1a1a99;
+    font-weight: 500;
+    padding: 8px 18px;
+    border-radius: 6px;
+    transition: background 0.3s, color 0.3s, transform 0.3s;
+    font-size: 1.1rem;
 }
-a:hover{
+
+#nav a:hover {
     background-color: aquamarine;
     color: brown;
-    border-radius: 5px;
+    border-radius: 6px;
+    transform: scale(1.08);
+}
+
+#main {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    padding: 32px;
+    width: 80%;
+    margin: 0 auto 24px auto;
+    text-align: center;
+}
+
+#main p {
+    font-size: 1.2rem;
+    color: #3a1c3a;
+    margin-bottom: 18px;
+}
+
+#main img {
+    max-width: 350px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    margin-top: 12px;
+    transition: box-shadow 0.4s, transform 0.4s;
+}
+
+#main img:hover {
+    box-shadow: 0 6px 24px rgba(0,0,0,0.18);
+    transform: scale(1.04) rotate(-2deg);
+}
+
+#footer {
+    background: #3a1c3a;
+    color: #fff;
+    text-align: center;
+    padding: 16px 0;
+    border-radius: 10px;
+    width: 80%;
+    margin: 0 auto 24px auto;
+    font-size: 1rem;
+    animation: fadeInUp 1.2s;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
