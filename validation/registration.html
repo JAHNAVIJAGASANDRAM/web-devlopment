@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="registrationForm" class="form-section">
+    <title>user signup</title>
+    <h2>Registration</h2>
+    <form onsubmit="return validateRegistration()">
+    <form action="/submit" method="post">
+       
+    <label for="Name">Enter Full Name</label><br>
+    <input type="username" id="regusername" name="username" required><br>
+    <label for="email">Enter Email</label><br>
+    <input type="email" id="regemail" name="email" required><br>
+    <label for="Mobile Number">Mobile Number</label><br>
+    <input type="number" id="regNumber" name="number" required><br>
+    <input type="password"id="regpassword" placeholder="password">
+    <input type="checkbox" onclick="togglePassword('regpassword')">show<br>
+    <input type="password" id="regconfirmpassword" placeholder="confirm password"><br>
+    <input type="checkbox" onclick="togglePassword('regconfirmpassword')">show<br>
+    
+    <label type="text">Gender</label>
+    <select>
+        <option>female</option>
+        <option>male</option>
+        <option>Other</option>
+    </select>
+    
+    <input type="submit" value="Register">
+    </form>
+    </div>
+    function showForm(formId){
+        let forms=documemt.getElementByClassName("form.section");
+        for(let i=0;i<forms.length;i++){
+            forms[i].style.display="none";
+            }
+            document.getElementById(formId).style.display="block";
+    }
+    function validateRegistration(){
+        let username = document.getElementById("regusername").value.trim();
+        let email = document.getElementById("regemail").value.trim();
+        let number = document.getElementById("regNumber").value.trim();
+        let password = document.getElementById("regpassword").value.trim();
+        let confirmPassword = document.getElementById("regconfirmpassword").value.trim();
+        let usernameRegex="/^[a-zA-Z0-9]{4,15}$/";
+        let emailRegex="/^[a-zA-Z0-9._%+-]+@[a-zA-Z]+$/";
+        let passwordRegex="/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@$[%*?&]{6,}$/";
+        if(!usernameRegex.test(username)){
+            alert("username must be 4-5 characters long and contains only leters and numbers");
+            return false;
+        }
+        if(!emailRegex.test(email)){
+            alert("Enter a valid email address");
+            return false;
+        }
+        if(!passwordRegex.test(password)){
+            alert("password must be atleast 6 char");
+            return false;
+        }
+        if(password !=confirmPassword){
+        alert("password and confirm password must be same");
+        return false;
+       }
+
+    }
+    
+</body>
+</html>
