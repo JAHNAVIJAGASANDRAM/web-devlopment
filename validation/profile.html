@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+</head>
+<body>
+    <h2>User Profile</h2>
+    <form onsubmit="return validateProfile()" action="/submit" method="post">
+        <label for="fullname">Full Name</label><br>
+        <input type="text" id="fullname" name="fullname" required><br>
+        <label for="email">Email</label><br>
+        <input type="email" id="email" name="email" required><br>
+        <label for="mobile">Mobile Number</label><br>
+        <input type="text" id="mobile" name="mobile" required pattern="\d{10}"><br>
+        <label for="gender">Gender</label>
+        <select id="gender" name="gender">
+            <option value="female">Female</option>
+            <option value="male">Male</option>
+            <option value="other">Other</option>
+        </select>
+        <br>
+        <input type="submit" value="Save Profile">
+    </form>
+    <script>
+        function validateProfile(){
+            alert("Profile saved successfully");
+            return true;
+        }
+    </script>
+</body>
+</html>
