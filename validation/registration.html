@@ -3,70 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>User Signup</title>
 </head>
 <body>
     <div id="registrationForm" class="form-section">
-    <title>user signup</title>
-    <h2>Registration</h2>
-    <form onsubmit="return validateRegistration()">
-    <form action="/submit" method="post">
-       
-    <label for="Name">Enter Full Name</label><br>
-    <input type="username" id="regusername" name="username" required><br>
-    <label for="email">Enter Email</label><br>
-    <input type="email" id="regemail" name="email" required><br>
-    <label for="Mobile Number">Mobile Number</label><br>
-    <input type="number" id="regNumber" name="number" required><br>
-    <input type="password"id="regpassword" placeholder="password">
-    <input type="checkbox" onclick="togglePassword('regpassword')">show<br>
-    <input type="password" id="regconfirmpassword" placeholder="confirm password"><br>
-    <input type="checkbox" onclick="togglePassword('regconfirmpassword')">show<br>
-    
-    <label type="text">Gender</label>
-    <select>
-        <option>female</option>
-        <option>male</option>
-        <option>Other</option>
-    </select>
-    
-    <input type="submit" value="Register">
-    </form>
+        <h2>Registration</h2>
+        <form onsubmit="return validateRegistration()" action="#" method="post">
+            <label for="regusername">Enter Full Name</label><br>
+            <input type="text" id="regusername" name="username" required><br>
+            <label for="regemail">Enter Email</label><br>
+            <input type="email" id="regemail" name="email" required><br>
+            <label for="regNumber">Mobile Number</label><br>
+            <input type="text" id="regNumber" name="number" required pattern="\d{10}"><br>
+            <input type="password" id="regpassword" name="password" placeholder="Password" required>
+            <input type="checkbox" onclick="togglePassword('regpassword')">Show<br>
+            <input type="password" id="regconfirmpassword" name="confirmpassword" placeholder="Confirm Password" required><br>
+            <input type="checkbox" onclick="togglePassword('regconfirmpassword')">Show<br>
+            <label for="gender">Gender</label>
+            <select id="gender" name="gender">
+                <option value="female">Female</option>
+                <option value="male">Male</option>
+                <option value="other">Other</option>
+            </select>
+            <br>
+            <input type="submit" value="Register">
+        </form>
     </div>
-    function showForm(formId){
-        let forms=documemt.getElementByClassName("form.section");
-        for(let i=0;i<forms.length;i++){
-            forms[i].style.display="none";
+    <script>
+        function showForm(formId){
+            let forms = document.getElementsByClassName("form-section");
+            for(let i = 0; i < forms.length; i++){
+                forms[i].style.display = "none";
             }
-            document.getElementById(formId).style.display="block";
-    }
-    function validateRegistration(){
-        let username = document.getElementById("regusername").value.trim();
-        let email = document.getElementById("regemail").value.trim();
-        let number = document.getElementById("regNumber").value.trim();
-        let password = document.getElementById("regpassword").value.trim();
-        let confirmPassword = document.getElementById("regconfirmpassword").value.trim();
-        let usernameRegex="/^[a-zA-Z0-9]{4,15}$/";
-        let emailRegex="/^[a-zA-Z0-9._%+-]+@[a-zA-Z]+$/";
-        let passwordRegex="/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@$[%*?&]{6,}$/";
-        if(!usernameRegex.test(username)){
-            alert("username must be 4-5 characters long and contains only leters and numbers");
-            return false;
+            document.getElementById(formId).style.display = "block";
         }
-        if(!emailRegex.test(email)){
-            alert("Enter a valid email address");
-            return false;
+        function togglePassword(id){
+            const input = document.getElementById(id);
+            input.type = input.type === "password" ? "text" : "password";
         }
-        if(!passwordRegex.test(password)){
-            alert("password must be atleast 6 char");
-            return false;
-        }
-        if(password !=confirmPassword){
-        alert("password and confirm password must be same");
-        return false;
-       }
+        function validateRegistration(){
+            let username = document.getElementById("regusername").value.trim();
+            let email = document.getElementById("regemail").value.trim();
+            let number = document.getElementById("regNumber").value.trim();
+            let password = document.getElementById("regpassword").value.trim();
+            let confirmPassword = document.getElementById("regconfirmpassword").value.trim();
 
-    }
-    
-</body>
-</html>
+            let usernameRegex = /^[a-zA-Z0-9]{4,15}$/;
+            let emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z]+\.[a-zA-Z]{2,}$/;
+            let passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@$[%*?&]{6,}$/;
+
+            if(!usernameRegex.test(username)){
+                alert("Username must be 4-15 characters long and contain only letters and numbers");
+                return false;
+            }
+            if(!emailRegex.test(email)){
+                alert("Enter a valid email address");
+                return false;
+            }
+            if(!passwordRegex.test(password)){
+                alert("Password must be at least 6 characters and contain letters and numbers");
+                return false;
+            }
+            if(password !== confirmPassword){
+                alert("Password and confirm password must be the same");
+                return false;
+            }
+            // Optionally validate mobile number
+            if(!/^\d{10}$/.test(number)){
+                alert("Enter a valid 10-digit mobile number");
+                return false;
+            }
+            return true;
+        }
