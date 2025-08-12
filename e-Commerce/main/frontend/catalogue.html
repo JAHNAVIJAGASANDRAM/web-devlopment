@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Catalogue | Evara</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,7 +14,6 @@
     <h3>shop your luxury</h3>
     <div id="nav">
         <ul>
-            
             <li><a href="home.html">Home</a></li>
             <li><a href="registration.html">Signup</a></li>
             <li><a href="contact.html">Contact</a></li>
@@ -22,10 +21,47 @@
             <li><a href="cart.html">Cart</a></li>
             <li><a href="login.html">Login</a></li>
         </ul>
-
+    </div>
+    <div id="main">
+        <h2>Product Catalogue</h2>
+        <div class="catalogue-list">
+            <div class="product">
+                <h3>Unicorn Plush</h3>
+                <p>Soft and magical plush toy.</p>
+                <p>Price: ₹499</p>
+                <button onclick="addToCart('Unicorn Plush', 499)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <h3>Luxury Mug</h3>
+                <p>Elegant mug for your morning coffee.</p>
+                <p>Price: ₹299</p>
+                <button onclick="addToCart('Luxury Mug', 299)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <h3>Rainbow Notebook</h3>
+                <p>Colorful notebook for your ideas.</p>
+                <p>Price: ₹199</p>
+                <button onclick="addToCart('Rainbow Notebook', 199)">Add to Cart</button>
+            </div>
+        </div>
     </div>
     <div id="footer">
         <h4>all copy rigths reserved by Evara</h4>
     </div>
+    <script>
+        // Simple cart logic using localStorage
+        function addToCart(product, price) {
+            let cart = JSON.parse(localStorage.getItem("cartItems") || "[]");
+            // Check if product already exists
+            const idx = cart.findIndex(item => item.product === product);
+            if (idx > -1) {
+                cart[idx].quantity += 1;
+            } else {
+                cart.push({ product, price, quantity: 1 });
+            }
+            localStorage.setItem("cartItems", JSON.stringify(cart));
+            alert(product + " added to cart!");
+        }
+    </script>
 </body>
 </html>
