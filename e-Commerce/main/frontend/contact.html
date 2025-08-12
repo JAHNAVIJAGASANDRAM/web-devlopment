@@ -3,18 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Contact | Evara</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="header">
         <h1>Evara</h1>
     </div>
-    <h2>shop the unicorn</h2>
-    <h3>shop your luxury</h3>
+    <h2>Shop the Unicorn</h2>
+    <h3>Shop your luxury</h3>
     <div id="nav">
         <ul>
-            
             <li><a href="home.html">Home</a></li>
             <li><a href="registration.html">Signup</a></li>
             <li><a href="contact.html">Contact</a></li>
@@ -22,10 +21,44 @@
             <li><a href="cart.html">Cart</a></li>
             <li><a href="login.html">Login</a></li>
         </ul>
-
+    </div>
+    <div id="main">
+        <h2>Contact Us</h2>
+        <form onsubmit="return validateContact()" action="#" method="post">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required><br>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br>
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="4" required></textarea><br>
+            <input type="submit" value="Send">
+        </form>
     </div>
     <div id="footer">
-        <h4>all copy rigths reserved by Evara</h4>
+        <h4>All copyrights reserved by Evara</h4>
     </div>
+    <script>
+        function validateContact() {
+            const name = document.getElementById("name").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const message = document.getElementById("message").value.trim();
+            const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z]+\.[a-zA-Z]{2,}$/;
+
+            if (name.length < 2) {
+                alert("Please enter your name.");
+                return false;
+            }
+            if (!emailRegex.test(email)) {
+                alert("Please enter a valid email address.");
+                return false;
+            }
+            if (message.length < 10) {
+                alert("Message should be at least 10 characters.");
+                return false;
+            }
+            alert("Thank you for contacting us!");
+            return true;
+        }
+    </script>
 </body>
 </html>
