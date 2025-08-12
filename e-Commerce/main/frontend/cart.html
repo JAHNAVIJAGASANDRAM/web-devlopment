@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cart | Evara</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,7 +14,6 @@
     <h3>shop your luxury</h3>
     <div id="nav">
         <ul>
-            
             <li><a href="home.html">Home</a></li>
             <li><a href="registration.html">Signup</a></li>
             <li><a href="contact.html">Contact</a></li>
@@ -22,13 +21,46 @@
             <li><a href="cart.html">Cart</a></li>
             <li><a href="login.html">Login</a></li>
         </ul>
-
     </div>
     <div id="main">
-        <h2> view cart</h2>
+        <h2>View Cart</h2>
+        <div id="cartContent"></div>
     </div>
     <div id="footer">
         <h4>all copy rigths reserved by Evara</h4>
     </div>
+    <script>
+        // Example: empty cart array
+        const cartItems = []; // Replace with actual cart data if available
+
+        function renderCart() {
+            const cartDiv = document.getElementById("cartContent");
+            if (cartItems.length === 0) {
+                cartDiv.innerHTML = "<p>No items found.</p>";
+            } else {
+                let html = `<table border="1" cellpadding="8" style="width:100%; background:#fff;">
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>`;
+                cartItems.forEach(item => {
+                    html += `<tr>
+                        <td>${item.product}</td>
+                        <td>${item.quantity}</td>
+                        <td>₹${item.price}</td>
+                    </tr>`;
+                });
+                html += `</tbody></table>`;
+                cartDiv.innerHTML = html;
+            }
+        }
+
+        // Initial call to render the cart (will show "No items found." message)
+        renderCart();
+    </script>
 </body>
 </html>
