@@ -1,0 +1,47 @@
+body {
+    background-color: rgb(125, 164, 227);
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+#main {
+    background-color: aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px 0;
+    border-radius: 16px;
+    margin: 16px auto 24px auto;
+    width: 80%;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    
+}
+
+
+#main button {
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 0;
+    color: #e46868;
+    
+    letter-spacing: 2px;
+}
+
+h2, h3 {
+    text-align: center;
+    margin: 0 0 12px 0;
+    color: #3a1c3a;
+}
+
+
+#main p {
+    font-size: 1.2rem;
+    color: #3a1c3a;
+    margin-bottom: 18px;
+}
+
+
+
+
