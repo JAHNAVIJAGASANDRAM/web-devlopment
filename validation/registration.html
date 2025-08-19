@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Signup</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="registrationForm" class="form-section">
-        <h2>Registration</h2>
+    <h2>Registration</h2>
+    <div id="main" class="form-section">
+       
         <form onsubmit="return validateRegistration()" action="#" method="post">
             <label for="regusername">Enter Full Name</label><br>
             <input type="text" id="regusername" name="username" required><br>
@@ -17,7 +19,7 @@
             <input type="text" id="regNumber" name="number" required pattern="\d{10}"><br>
             <input type="password" id="regpassword" name="password" placeholder="Password" required>
             <input type="checkbox" onclick="togglePassword('regpassword')">Show<br>
-            <input type="password" id="regconfirmpassword" name="confirmpassword" placeholder="Confirm Password" required><br>
+            <input type="password" id="regconfirmpassword" name="confirmpassword" placeholder="Confirm Password" required>
             <input type="checkbox" onclick="togglePassword('regconfirmpassword')">Show<br>
             <label for="gender">Gender</label>
             <select id="gender" name="gender">

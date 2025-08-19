@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Profile</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h2>User Profile</h2>
+    <div id="main">
     <form onsubmit="return validateProfile()" action="#" method="post">
         <label for="fullname">Full Name</label><br>
         <input type="text" id="fullname" name="fullname" required><br>
@@ -23,6 +25,7 @@
         <br>
         <input type="submit" value="Save Profile">
     </form>
+    </div>
     <script>
         function validateProfile(){
             alert("Profile saved successfully");
