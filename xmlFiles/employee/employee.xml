@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE employees SYSTEM "employees.dtd">
+<employees>
+    <employee>
+        <name>John Doe</name>
+        <age>30</age>
+        <department>Engineering</department>
+        <role>Software Developer</role>
+        <salary>4000</salary>
+    </employee>
+    <employee>
+        <name>Jane Smith</name>
+        <age>25</age>
+        <department>Marketing</department>
+        <role>Content Strategist</role>
+        <salary>5000</salary>
+    </employee>
+    <employee>
+        <name>Emily Johnson</name>
+        <age>28</age>
+        <department>Design</department>
+        <role>UX Designer</role>
+        <salary>6000</salary>
+    </employee>
+    </employees>
