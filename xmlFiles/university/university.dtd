@@ -1,0 +1,16 @@
+<!ELEMENT university (department,course,faculty,student)>
+<!ELEMENT department (DeptId,DeptName,hod)>
+<!ELEMENT course (courseCode,courseName,credits)>
+<!ELEMENT  faculty (facultyId,name,designation,DeptId)>
+<!ELEMENT  student (studentId,studentName,DeptId)>
+<!ELEMENT DeptId (#PCDATA)>
+<!ELEMENT DeptName (#PCDATA)>
+<!ELEMENT hod (#PCDATA)>
+<!ELEMENT courseCode (#PCDATA)>
+<!ELEMENT  courseName (#PCDATA)>
+<!ELEMENT  credits (#PCDATA)>
+<!ELEMENT  facultyId (#PCDATA)>
+<!ELEMENT  name (#PCDATA)>
+<!ELEMENT  designation (#PCDATA)>
+<!ELEMENT  studentId (#PCDATA)>
+<!ELEMENT  studentName (#PCDATA)>

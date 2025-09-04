@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE university SYSTEM "university.dtd">
+    
+<university>
+    <department>
+        <DeptId>62</DeptId>
+        <DeptName>cyber</DeptName>
+        <hod>sunitha</hod>
+    </department>
+    <course>
+        <courseCode>a62</courseCode>
+        <courseName>cs</courseName>
+        <credits>3</credits>
+    </course>
+    <faculty>
+        <facultyId>62aa1</facultyId>
+        <name>naresh</name>
+        <designation>faculty</designation>
+        <DeptId>cyber</DeptId>
+    </faculty>
+    <student>
+        <studentId>6283</studentId>
+        <studentName>jahnavi</studentName>
+        <DeptId>cyber</DeptId>
+    </student>
+
+</university>
