@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE order SYSTEM "orders.dtd">
+<order>
+    <orders>
+        <orderId>1</orderId>
+        <customerName>jj</customerName>
+        <address>hyd</address>
+        <date>25 june</date>
+        <productName>books</productName>
+        <quantity>10</quantity>
+    </orders>
+    <orders>
+        <orderId>2</orderId>
+        <customerName>hh</customerName>
+        <address>nzb</address>
+        <date>23</date>
+        <productName>bottle</productName>
+        <quantity>2</quantity>
+    </orders>
+</order>
