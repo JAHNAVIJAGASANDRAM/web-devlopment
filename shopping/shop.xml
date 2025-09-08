@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="shop.xsd" ?>
+<product>
+    <p>
+        <productid>1</productid>
+        <productname>ss</productname>
+        <category>www</category>
+        <quantity>1</quantity>
+        <unitp>1.2</unitp>
+        <total>3.2</total>
+    </p>
+    
+
+</product>
