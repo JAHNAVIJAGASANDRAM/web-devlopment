@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books SYSTEM "book.dtd" >
+<?xml-model href="book.xsd"?>
+<books>
+    
+        <title>zero to one</title>
+        <author>peter thie</author>
+        <isbn>978-0-753</isbn>
+        <publisher>penguin</publisher>
+        <name>help</name>
+        <edition>1</edition>
+        <price>20</price>
+
+</books>
