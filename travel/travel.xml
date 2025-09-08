@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="travel.xsd"?>
+<travel>
+    
+        <flight>
+            <flightnumber>123</flightnumber>
+           <airline>america</airline>
+           <source>newyork</source>
+            <destination>london</destination>
+            <price>500</price>
+            
+        </flight>
+        <hotel>
+            <hotelid>1</hotelid>
+            <name>kinara</name>
+            <location>hyd</location>
+            <price>1000</price>
+        </hotel>
+        <car>
+            <carid>1</carid>
+            <model>2.0</model>
+            <price>20.5</price>
+            <availability>yes</availability>
+        </car>
+    
+
+</travel>
