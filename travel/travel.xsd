@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="travel">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="flight">
+                  <xs:complexType>
+                 <xs:sequence>  
+                <xs:element name="flightnumber" type="xs:string"/>
+                <xs:element name="airline" type="xs:string"/>
+                <xs:element name="source" type="xs:string"/>
+                <xs:element name="destination" type="xs:string"/>
+                <xs:element name="price" type="xs:decimal"/>
+                </xs:sequence>
+              </xs:complexType>
+                </xs:element>
+                <xs:element name="hotel">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="hotelid" type="xs:integer"/>
+                            <xs:element name="name" type="xs:string"/>
+                            <xs:element name="location" type="xs:string"/>
+                            <xs:element name="price" type="xs:decimal"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="car">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="carid" type="xs:integer"/>
+                            <xs:element name="model" type="xs:decimal"/>
+                            <xs:element name="price" type="xs:float"/>
+                            <xs:element name="availability" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
